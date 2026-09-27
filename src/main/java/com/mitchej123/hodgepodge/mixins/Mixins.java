@@ -2032,6 +2032,11 @@ public enum Mixins implements IMixins {
             .addExcludedMod(TargetedMod.DREAMCRAFT)
             .setApplyIf(() -> FixesConfig.fixMTCoreRecipe)
             .setPhase(Phase.LATE)),
+    ASP_HELMET_COORDINATES(new MixinBuilder("Fix solar helmet block coordinates")
+            .addCommonMixins("advancedsolarpanels.MixinItemAdvancedSolarHelmet")
+            .addRequiredMod(TargetedMod.ADVANCED_SOLAR_PANELS)
+            .setApplyIf(() -> FixesConfig.fixAdvancedSolarHelmetCoordinates)
+            .setPhase(Phase.LATE)),
     TD_NASE_PREVENTION(new MixinBuilder("Prevent NegativeArraySizeException on itemduct transfers")
             .addCommonMixins("thermaldynamics.MixinSimulatedInv")
             .setApplyIf(() -> FixesConfig.preventThermalDynamicsNASE)

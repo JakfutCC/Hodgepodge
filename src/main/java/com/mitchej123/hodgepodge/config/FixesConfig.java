@@ -165,6 +165,10 @@ public class FixesConfig {
     @Config.DefaultBoolean(true)
     public static boolean fixMTCoreRecipe;
 
+    @Config.Comment("Fixes Advanced Solar Panels helmets sampling the wrong sky and biome at negative coordinates")
+    @Config.DefaultBoolean(true)
+    public static boolean fixAdvancedSolarHelmetCoordinates;
+
     @Config.Comment("Allows the server to assign the logged in UUID to the same username when online_mode is false")
     @Config.DefaultBoolean(true)
     public static boolean fixNetHandlerLoginServerOfflineMode;
