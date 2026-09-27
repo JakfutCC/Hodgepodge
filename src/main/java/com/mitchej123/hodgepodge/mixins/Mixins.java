@@ -1267,6 +1267,11 @@ public enum Mixins implements IMixins {
             .setApplyIf(() -> FixesConfig.fixIc2ArmorLag)
             .addRequiredMod(TargetedMod.IC2)
             .setPhase(Phase.LATE)),
+    IC2_SOLAR_COORDINATES(new MixinBuilder("Fix IC2 solar light and helmet coordinates")
+            .addCommonMixins("ic2.MixinSolarHelmetCoordinates", "ic2.MixinSolarGeneratorCoordinates")
+            .setApplyIf(() -> FixesConfig.fixIc2SolarCoordinates)
+            .addRequiredMod(TargetedMod.IC2)
+            .setPhase(Phase.LATE)),
     IC2_CROP_TRAMPLING_FIX(new MixinBuilder()
             .addCommonMixins("ic2.MixinIC2TileEntityCrop")
             .setApplyIf(() -> FixesConfig.fixIc2CropTrampling)

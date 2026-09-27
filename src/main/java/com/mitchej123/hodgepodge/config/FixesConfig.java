@@ -169,6 +169,10 @@ public class FixesConfig {
     @Config.DefaultBoolean(true)
     public static boolean fixAdvancedSolarHelmetCoordinates;
 
+    @Config.Comment("Fix IC2 solar helmet coordinates and sample solar light at the device height in cubic worlds")
+    @Config.DefaultBoolean(true)
+    public static boolean fixIc2SolarCoordinates;
+
     @Config.Comment("Allows the server to assign the logged in UUID to the same username when online_mode is false")
     @Config.DefaultBoolean(true)
     public static boolean fixNetHandlerLoginServerOfflineMode;
