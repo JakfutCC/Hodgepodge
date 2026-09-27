@@ -881,6 +881,16 @@ public enum Mixins implements IMixins {
             .addClientMixins("minecraft.fastload.MixinTextureMap_RemoveExtraIconLoad")
             .setApplyIf(() -> SpeedupsConfig.removeExtraIconLoad)
             .setPhase(Phase.EARLY)),
+    FIX_BOP_CUBIC_ITEM_BLOCK_HEIGHT(new MixinBuilder()
+            .addCommonMixins("biomesoplenty.MixinItemBlockHeight")
+            .setApplyIf(() -> FixesConfig.fixCubicModItemBlockHeight)
+            .addRequiredMod(TargetedMod.BOP)
+            .setPhase(Phase.LATE)),
+    FIX_HARVESTCRAFT_CUBIC_ITEM_BLOCK_HEIGHT(new MixinBuilder()
+            .addCommonMixins("harvestcraft.MixinItemBlockToolHeight")
+            .setApplyIf(() -> FixesConfig.fixCubicModItemBlockHeight)
+            .addRequiredMod(TargetedMod.HARVESTCRAFT)
+            .setPhase(Phase.LATE)),
     SPEEDUP_BOP_LEAF_DECAY(new MixinBuilder()
             .addCommonMixins(
                     "bfsleafdecay.MixinBlockBOPAppleLeaves",
@@ -1453,6 +1463,16 @@ public enum Mixins implements IMixins {
             .setPhase(Phase.LATE)),
 
     // Thaumcraft
+    FIX_THAUMCRAFT_CUBIC_RESEARCH_HEIGHT(new MixinBuilder()
+            .addCommonMixins("thaumcraft.MixinResearchTableHeight")
+            .setApplyIf(() -> FixesConfig.fixThaumcraftCubicResearchHeight)
+            .addRequiredMod(TargetedMod.THAUMCRAFT)
+            .setPhase(Phase.LATE)),
+    FIX_THAUMCRAFT_CUBIC_FETTER_HEIGHT(new MixinBuilder()
+            .addCommonMixins("thaumcraft.MixinGolemFetterHeight")
+            .setApplyIf(() -> FixesConfig.fixThaumcraftCubicFetterHeight)
+            .addRequiredMod(TargetedMod.THAUMCRAFT)
+            .setPhase(Phase.LATE)),
     SPEEDUP_GET_INFUSION_RECIPES(new MixinBuilder()
             .addCommonMixins("thaumcraft.MixinThaumcraftApi_SpeedupGetInfusionRecipe")
             .setApplyIf(() -> SpeedupsConfig.speedupThaumGetInfusionRecipes)
@@ -1786,6 +1806,11 @@ public enum Mixins implements IMixins {
             .addRequiredMod(TargetedMod.EXTRATIC)
             .setPhase(Phase.LATE)),
     // Extra Utilities
+    FIX_EXTRA_UTILITIES_CUBIC_WAND_HEIGHT(new MixinBuilder()
+            .addCommonMixins("extrautilities.MixinBuildersWandHeight")
+            .setApplyIf(() -> FixesConfig.fixExtraUtilitiesCubicWandHeight)
+            .addRequiredMod(TargetedMod.EXTRA_UTILITIES)
+            .setPhase(Phase.LATE)),
     FIX_EXTRA_UTILITIES_UNENCHANTING(new MixinBuilder("Fix Exu Unenchanting")
             .addCommonMixins("extrautilities.MixinRecipeUnEnchanting")
             .setApplyIf(() -> FixesConfig.fixExtraUtilitiesUnEnchanting)
@@ -1978,6 +2003,11 @@ public enum Mixins implements IMixins {
             .setPhase(Phase.LATE)),
 
     // Various Exploits/Fixes
+    BIBLIOCRAFT_MEASUREMENT_HEIGHT(new MixinBuilder()
+            .addCommonMixins("bibliocraft.MixinPlumbLineHeight", "bibliocraft.MixinTapeMeasureHeight")
+            .setApplyIf(() -> FixesConfig.fixBibliocraftMeasurementHeight)
+            .addRequiredMod(TargetedMod.BIBLIOCRAFT)
+            .setPhase(Phase.LATE)),
     BIBLIOCRAFT_PACKET_FIX(new MixinBuilder("Packet Fix")
             .addCommonMixins(
                     "bibliocraft.MixinBibliocraftPatchPacketExploits",

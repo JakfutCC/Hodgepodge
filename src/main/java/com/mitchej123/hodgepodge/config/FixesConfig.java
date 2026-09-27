@@ -6,6 +6,10 @@ import com.gtnewhorizon.gtnhlib.config.Config;
 @Config.RequiresMcRestart
 public class FixesConfig {
 
+    @Config.Comment("Use cubic ceilings for Biomes O' Plenty and HarvestCraft item-block placement")
+    @Config.DefaultBoolean(true)
+    public static boolean fixCubicModItemBlockHeight;
+
     /* ====== Minecraft fixes start ===== */
 
     @Config.Comment("Fix Vanilla IOOBE when rendering chunks at a distance larger than 16")
@@ -602,6 +606,10 @@ public class FixesConfig {
 
     // Bibliocraft
 
+    @Config.Comment("Fix Bibliocraft tape and plumb-line measurements at negative fractional Y")
+    @Config.DefaultBoolean(true)
+    public static boolean fixBibliocraftMeasurementHeight;
+
     @Config.Comment("Fix Bibliocraft packet exploits")
     @Config.DefaultBoolean(true)
     public static boolean fixBibliocraftPackets;
@@ -685,6 +693,10 @@ public class FixesConfig {
     public static boolean fixExtraTiCTEConflict;
 
     // Extra Utilities
+
+    @Config.Comment("Use cubic world bounds for the Extra Utilities Builder's Wand")
+    @Config.DefaultBoolean(true)
+    public static boolean fixExtraUtilitiesCubicWandHeight;
 
     @Config.Comment("Fix Extra Utilities drums eating IC2 cells and Forestry capsules")
     @Config.DefaultBoolean(true)
@@ -909,6 +921,14 @@ public class FixesConfig {
     public static boolean fixPortalGunURLs;
 
     // Thaumcraft
+
+    @Config.Comment("Allow golem Fetters at loaded positions below zero in cubic worlds")
+    @Config.DefaultBoolean(true)
+    public static boolean fixThaumcraftCubicFetterHeight;
+
+    @Config.Comment("Use cubic bounds and wait for loaded terrain for the research table's finite bonus search")
+    @Config.DefaultBoolean(true)
+    public static boolean fixThaumcraftCubicResearchHeight;
 
     @Config.Comment("Fix Thaumcraft Aspects being sorted by tag instead of by name")
     @Config.DefaultBoolean(true)
